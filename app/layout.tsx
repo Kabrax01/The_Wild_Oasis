@@ -1,6 +1,7 @@
 import { RootLayoutProps } from "@/types/general";
-import Navigation from "./components/Navigation";
-import Logo from "./components/Logo";
+import Navigation from "@/app/_components/Navigation";
+import Logo from "@/app/_components/Logo";
+import "../app/_styles/globals.css";
 
 export const metadata = {
     title: "The Wild Oasis",
@@ -9,7 +10,7 @@ export const metadata = {
 const RootLayout = ({ children }: RootLayoutProps) => {
     return (
         <html lang="en">
-            <body>
+            <body className="min-h-screen bg-primary-950 text-primary-100">
                 <header>
                     <Logo />
                     <Navigation />
