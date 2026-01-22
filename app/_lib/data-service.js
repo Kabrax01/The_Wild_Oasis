@@ -1,5 +1,6 @@
 import { eachDayOfInterval } from "date-fns";
 import { supabase } from "./supabase";
+import { unstable_noStore } from "next/cache";
 
 /////////////
 // GET
@@ -36,6 +37,8 @@ export async function getCabinPrice(id) {
 }
 
 export const getCabins = async function () {
+    unstable_noStore();
+
     const { data, error } = await supabase
         .from("cabins")
         .select("id, name, maxCapacity, regularPrice, discount, image")
